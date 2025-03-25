@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "target": "es2020",
+        "module": "commonjs",
+        "strict": true,
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictBindCallApply": true,
+        "allowUnreachableCode": false,
+        "alwaysStrict": true,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "types": ["react", "react-dom", "node", "jest"],
+        "rootDirs": ["./src"]
+    },
+    "include": ["src/**/*", "test/**/*"],
+    "exclude": ["node_modules", "dist", "build", "coverage", "test/fixtures"]
+}

@@ -1,0 +1,16 @@
+# bundle output related
+node_modules
+build
+static
+dist
+public
+src/assets
+
+# config related
+scripts
+config
+coverage
+.eslintrc.js
+jest.config.js
+babel.config.js
+

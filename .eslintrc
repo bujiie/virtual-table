@@ -1,0 +1,67 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "react-app",
+        "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint",
+        "prettier",
+        "prettier/react",
+        "prettier/@typescript-eslint"
+    ],
+    "parserOptions": {
+        "project": ["./tsconfig.json"],
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        },
+        "tsconfigRootDir": ".",
+        "sourceType": "module" // Allows for the use of imports
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true
+            }
+        }
+    },
+    "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier", "import"],
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "rules": {
+        "indent": "off",
+        "curly": "error",
+        "spaced-comment": "error",
+        "no-var": "error",
+        "prefer-const": "error",
+        "block-scoped-var": "error",
+        "no-magic-numbers": [
+            "error",
+            {
+                "ignore": [-1, 0, 1, 2]
+            }
+        ],
+        "no-self-assign": [
+            "error",
+            {
+                "props": true
+            }
+        ],
+        "yoda": "error",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-magic-numbers": "off",
+        "@typescript-eslint/no-unused-vars": ["error"]
+    }
+}
