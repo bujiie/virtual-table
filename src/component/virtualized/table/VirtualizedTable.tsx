@@ -25,7 +25,7 @@ export const VirtualizedTable = <T extends { [key: string]: any }>({ headers, da
                 accessorKey: header.key,
                 header: header.label,
                 cell: info => info.getValue(),
-                enableSorting: header.sortable ?? false,
+                enableSorting: header.sortable ?? false
             })),
         [headers]
     );
@@ -55,7 +55,7 @@ export const VirtualizedTable = <T extends { [key: string]: any }>({ headers, da
                     {table.getHeaderGroups().map(headerGroup => (
                         <tr key={headerGroup.id}>
                             {headerGroup.headers.map(header => (
-                                <th key={header.id} style={{ width: "100%" }} colSpan={header.colSpan}>
+                                <th key={header.id} style={{ width: '100%' }} colSpan={header.colSpan}>
                                     {flexRender(header.column.columnDef.header, header.getContext())}
                                 </th>
                             ))}
@@ -63,7 +63,7 @@ export const VirtualizedTable = <T extends { [key: string]: any }>({ headers, da
                     ))}
                 </thead>
                 <tbody style={{ height: `${virtualizer.getTotalSize()}px` }}>
-                    {virtualizer.getVirtualItems().map(virtualRow => {
+                    {virtualizer.getVirtualItems().map((virtualRow, index) => {
                         const row = rows[virtualRow.index] as Row<T>;
                         return (
                             <tr
@@ -71,13 +71,10 @@ export const VirtualizedTable = <T extends { [key: string]: any }>({ headers, da
                                 data-index={virtualRow.index}
                                 key={row.id}
                                 ref={node => virtualizer.measureElement(node)}
-                                style={{ transform: `translateY(${virtualRow.start}px)` }}>
+                                style={{ transform: `translateY(${virtualRow.start - index - 1}px)` }}>
                                 {row.getVisibleCells().map(cell => {
                                     return (
-                                        <td
-                                            key={cell.id}
-                                            style={{ width: "100%" }}
-                                            className='virtualized-table__cell'>
+                                        <td key={cell.id} style={{ width: '100%' }} className='virtualized-table__cell'>
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                         </td>
                                     );
