@@ -75,7 +75,11 @@ export const VirtualizedTable = <T extends { [key: string]: any }>({ headers, da
                             const row = rows[virtualRow.index] as Row<T>;
                             return (
                                 <tr
-                                    className='virtualized-table__row'
+                                    className={
+                                        index % 2 === 0
+                                            ? 'virtualized-table__row virtualized-table__row--even'
+                                            : 'virtualized-table__row virtualized-table__row--odd'
+                                    }
                                     data-index={virtualRow.index}
                                     key={row.id}
                                     ref={node => virtualizer.measureElement(node)}

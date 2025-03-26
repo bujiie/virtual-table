@@ -26,13 +26,15 @@
 
     th,
     td {
-        border: 1px solid black;
+        border-left: 1px solid #7b858f;
+        border-right: 1px solid #7b858f;
     }
 
     th {
         display: flex;
         text-align: left;
         padding: 8px 16px;
+        background-color: #7b858f;
     }
 
     th + th {
@@ -66,12 +68,24 @@
     &__row-header {
         display: flex;
         width: 100%;
+        border-top: 1px solid #7b858f;
+        border-bottom: 1px solid #7b858f;
     }
 
     &__row {
         display: flex;
         position: absolute;
         width: 100%;
+        border-top: 1px solid #7b858f;
+        border-bottom: 1px solid #7b858f;
+
+        &--odd {
+            background-color: #f5f8fa;
+        }
+
+        &--even {
+            background-color: #ffffff;
+        }
     }
 
     &__cell {
