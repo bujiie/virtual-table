@@ -1,0 +1,62 @@
+.virtualized-table {
+    display: grid;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: arial, sans-serif;
+    table-layout: fixed;
+
+    thead {
+        display: grid;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: lightgray;
+    }
+
+    tbody {
+        display: grid;
+        position: relative;
+    }
+
+    tr {
+        display: flex;
+        width: 100%;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th {
+        display: flex;
+        padding: 2px 4px;
+        text-align: left;
+    }
+
+    td {
+        display: flex;
+        padding: 6px;
+    }
+
+    &__container {
+        height: 800px;
+        overflow: auto;
+        position: relative;
+    }
+
+    &__row-header {
+        display: flex;
+        width: 100%;
+    }
+
+    &__row {
+        display: flex;
+        position: absolute;
+        width: 100%;
+    }
+
+    &__cell {
+        display: flex;
+    }
+}
