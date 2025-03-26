@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import VirtualizedTable from './component/virtualized/table/VirtualizedTable';
+import CkTable from './component/ck/CkTable';
 
 type FakeData = {
     date: string;
@@ -105,7 +106,8 @@ const fakeHeaders = [
 const App = (): ReactElement => {
     return (
         <div className='app'>
-            <VirtualizedTable<FakeData> headers={fakeHeaders} data={fakeData} />
+            <CkTable<FakeData> headers={fakeHeaders} data={fakeData} />
+            {/* <VirtualizedTable<FakeData> headers={fakeHeaders} data={fakeData} /> */}
         </div>
     );
 };
